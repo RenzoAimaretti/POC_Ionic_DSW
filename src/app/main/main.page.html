@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>To do list App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-input label="Nombre tarea" [(ngModel)]="newTodo.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Descripción"
+        [(ngModel)]="newTodo.description"
+      ></ion-input>
+    </ion-item>
+    <ion-button
+      (click)="addTodo()"
+      [disabled]="newTodo.title==='' || newTodo.description==='' "
+      >Agregar</ion-button
+    >
+  </ion-card>
+
+  <ion-card>
+    <ion-list>
+      @for (todo of todoCollection;track $index){
+      <ion-item>
+        <ion-label>{{todo.title}}</ion-label>
+        <ion-label>{{todo.description}}</ion-label>
+        <ion-label>{{todo.status}}</ion-label>
+        <ion-button (click)="checkTodo(todo)"> Completar </ion-button>
+      </ion-item>
+      }
+    </ion-list>
+  </ion-card>
+</ion-content>

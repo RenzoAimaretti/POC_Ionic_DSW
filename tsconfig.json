@@ -1,8 +1,15 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "parserOptions": {
+    "project": ["./tsconfig.app.json"],
+    "sourceType": "module"
+  },
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
