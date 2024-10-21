@@ -1,13 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  FormsModule,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormBuilder } from '@angular/forms';
 import {
   IonContent,
   IonHeader,
@@ -25,6 +18,7 @@ import {
 } from '@ionic/angular/standalone';
 import { RouterLink } from '@angular/router';
 import { Todo } from '../interface/todo.interface';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-main',
@@ -64,7 +58,8 @@ export class MainPage {
 
   constructor(private formBuilder: FormBuilder) {}
 
-  addTodo() {
+  async addTodo() {
+    await Haptics.impact({ style: ImpactStyle.Light });
     console.log(this.newTodo);
     this.todoCollection.push(this.newTodo);
     this.newTodo = {
@@ -74,7 +69,8 @@ export class MainPage {
     };
     console.log('La tarea fue agregada y el formulario se limpio');
   }
-  checkTodo(item: Todo) {
+  async checkTodo(item: Todo) {
+    await Haptics.impact({ style: ImpactStyle.Medium });
     item.status = !item.status;
   }
 }

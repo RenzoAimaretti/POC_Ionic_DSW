@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ProductListPage } from './product-list.page';
+import { CreditsPage } from './credits.page';
 
-describe('ProductListPage', () => {
-  let component: ProductListPage;
-  let fixture: ComponentFixture<ProductListPage>;
+describe('CreditsPage', () => {
+  let component: CreditsPage;
+  let fixture: ComponentFixture<CreditsPage>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductListPage);
+    fixture = TestBed.createComponent(CreditsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,12 +6,7 @@ export const routes: Routes = [
     loadComponent: () => import('./main/main.page').then((m) => m.MainPage),
   },
   {
-    path: 'main',
-    loadComponent: () => import('./main/main.page').then((m) => m.MainPage),
-  },
-  {
-    path: 'product-list',
-    loadComponent: () =>
-      import('./product-list/product-list.page').then((m) => m.ProductListPage),
+    path: 'credits',
+    loadComponent: () => import('./credits/credits.page').then( m => m.CreditsPage)
   },
 ];

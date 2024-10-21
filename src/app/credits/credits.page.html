@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>credits</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">credits</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title
+        >POC para la catedra de Desarrollo de software</ion-card-title
+      >
+      <ion-card-subtitle>Com:301 año:2024</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      Integrantes:
+      <ion-list>
+        <ion-item>
+          <ion-label>Apellido y nombre: Aimaretti, Renzo</ion-label>
+          <ion-label>Legajo: 50984</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido y nombre: Amelio Ortiz, Ignacio</ion-label>
+          <ion-label>Legajo: 51848</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Apellido y nombre: de Elia, Juan Manuel</ion-label>
+          <ion-label>Legajo: 50379</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button
+        (click)="openRepository()"
+        expand="block"
+        fill="clear"
+        shape="round"
+      >
+        Repositorio
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
