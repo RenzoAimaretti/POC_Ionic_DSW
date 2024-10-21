@@ -18,6 +18,7 @@ import {
   IonItem,
   IonButton,
 } from '@ionic/angular/standalone';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 @Component({
   selector: 'app-credits',
@@ -47,7 +48,8 @@ import {
 export class CreditsPage {
   constructor() {}
 
-  openRepository() {
+  async openRepository() {
+    await Haptics.impact({ style: ImpactStyle.Light });
     const url = 'https://github.com/RenzoAimaretti/POC_Ionic_DSW'; // Reemplaza con tu URL
     window.open(url, '_blank'); // Abre el repositorio en una nueva pestaña
   }

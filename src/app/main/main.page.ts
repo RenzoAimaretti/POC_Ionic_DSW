@@ -73,4 +73,13 @@ export class MainPage {
     await Haptics.impact({ style: ImpactStyle.Medium });
     item.status = !item.status;
   }
+
+  async removeTodo(item: Todo) {
+    await Haptics.impact({ style: ImpactStyle.Light });
+    const index = this.todoCollection.indexOf(item);
+    if (index > -1) {
+      this.todoCollection.splice(index, 1);
+      console.log('La tarea fue eliminada:', item);
+    }
+  }
 }

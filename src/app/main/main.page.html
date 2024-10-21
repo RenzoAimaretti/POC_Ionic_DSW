@@ -33,8 +33,11 @@
       <ion-item>
         <ion-label>{{todo.title}}</ion-label>
         <ion-label>{{todo.description}}</ion-label>
-        <ion-label>{{todo.status}}</ion-label>
+        <ion-label>{{ todo.status ? 'Completado' : 'Pendiente' }}</ion-label>
         <ion-button (click)="checkTodo(todo)"> Completar </ion-button>
+        <ion-button (click)="removeTodo(todo)" color="danger">
+          Eliminar
+        </ion-button>
       </ion-item>
       }
     </ion-list>
